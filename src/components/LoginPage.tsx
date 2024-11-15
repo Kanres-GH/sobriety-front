@@ -12,7 +12,7 @@ export default function LoginPage() {
                     <img src={logo} alt="New Me Logo" style={{width: '40vw', alignSelf: 'center', minWidth: '350px'}} />
                     <hr style={{display: 'block', borderColor: '#ffffff', border: 0, height: '1px', borderTop: '1px solid #1c1c1c'}}/>
                     <div className="reg-log-main-content-heading">
-                        <h1 style={{fontWeight: '500'}}>Log into New Me</h1>
+                        <h1 style={{fontWeight: '500', fontSize: '2em'}}>Log into New Me</h1>
                     </div>
                     <div className="reg-log-main-content-form">
                         <form>
@@ -28,7 +28,7 @@ export default function LoginPage() {
                     </div>
                     
                     <button>Sign in</button>
-                    <p>Don't have an account? <Link to='/register'><span>Sign up</span></Link></p>
+                    <p>Don't have an account? <Link to='/register'><span className='reg-log-span'>Sign up</span></Link></p>
                 </div>
             </div>
         </div>

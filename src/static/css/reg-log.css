@@ -91,7 +91,7 @@ input:-webkit-autofill:active{
     gap: 5px;
 }
 
-span {
+.reg-log-span {
     text-decoration: underline;
     color: rgb(125, 138, 255);
 }
