@@ -27,7 +27,7 @@ export default function LoginPage() {
                         </form>
                     </div>
                     
-                    <button>Sign in</button>
+                    <button className='login-btn'>Sign in</button>
                     <p>Don't have an account? <Link to='/register'><span className='reg-log-span'>Sign up</span></Link></p>
                 </div>
             </div>

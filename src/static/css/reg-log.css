@@ -16,7 +16,7 @@
 
 .reg-log-main {
     display: flex;
-    background-color: white;
+    /* background-color: white; */
     justify-content: center;
     align-items: center;
     /* border: 1px solid red; */
@@ -34,17 +34,100 @@
     gap: 40px;
 }
 
-button {
+
+
+.reg-log-ul:focus {
+    border: 1px solid red;
+}
+
+.reg-log-btns {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.reg-log-btn {
     background-color: rgb(0, 0, 0);
     color: white;
     border-radius: 30px;
     /* font-weight: bold; */
     font-size: larger;
-    width: 200px;
+    width: 160px;
 }
 
-button:hover {
-    border: 1px solid rgb(172, 172, 172);
+.reg-log-btn:hover {
+    border: 1px solid rgb(76, 180, 73);
+}
+
+.reg-log-main-ul {
+    border: 2px solid rgb(80, 80, 80);
+    border-radius: 15px;
+    overflow: hidden;
+    
+}
+
+.reg-log-ul {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(27, 27, 27);
+    color: rgb(163, 163, 163);
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.reg-log-ul::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(46, 46, 46);
+}
+
+.reg-log-ul::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.342);
+}
+
+.reg-log-ul li {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: medium;
+    padding: 5px 10px;
+    letter-spacing: 2px;
+}
+
+.reg-log-ul li:hover {
+    cursor: pointer;
+    background-color: rgb(56, 56, 56);
+    color: rgb(207, 207, 207);
+}
+
+.reg-log-ul li:focus {
+    background-color: rgb(77, 77, 77);
+    color: rgb(255, 255, 255);
+}
+
+.reg-log-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.reg-log-check {
+    width: 30px;
+}
+
+.login-btn {
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    max-width: 300px;
+    
+}
+
+.login-btn:hover {
+    background: rgb(8, 8, 8);
+    border: 1px solid rgb(94, 199, 108);
 }
 
 h1, p {
