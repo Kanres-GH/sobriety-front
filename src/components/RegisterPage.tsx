@@ -5,6 +5,7 @@ import UserDataForm from './UserDataForm';
 import RegisterFinalForm from './RegisterFinalForm';
 import AddictionListForm from './AddictionListForm';
 import { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type FormData = {
     username: string,
@@ -33,6 +34,7 @@ export default function RegisterPage() {
         addiction: "",
     });
 
+    const navigate = useNavigate();
     const { currentStepIndex, step, next, back, isFirstStep, isLastStep } = useMultiForm([
         <UserDataForm {...data} updateFields={updateFields} errors={errors} />,
         <AddictionListForm addiction={addiction} setAddiction={setAddiction} error={errors.addiction}/>,
@@ -44,7 +46,6 @@ export default function RegisterPage() {
             return { ...prev, ...fields };
         });
     
-        // Clear specific field error if the input is now valid
         setErrors((prevErrors) => {
             const newErrors = { ...prevErrors };
             for (const key in fields) {
@@ -79,8 +80,8 @@ export default function RegisterPage() {
             } else {
                 newErrors.email = "";
             }
-            if (!data.password.trim() || data.password.length < 6) {
-                newErrors.password = "Password must be at least 6 characters long.";
+            if (!data.password.trim() || data.password.length < 8) {
+                newErrors.password = "Password must be at least 8 characters long.";
             } else {
                 newErrors.password = "";
             }
@@ -104,7 +105,10 @@ export default function RegisterPage() {
 
     function onSubmit(e: FormEvent) {
         e.preventDefault();
-        if (validateStep()) {
+        if (isLastStep) {
+            navigate("/");
+        }
+        else if (validateStep()) {
             next();
         }
     }

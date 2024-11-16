@@ -15,7 +15,7 @@ export default function App() {
                     <Route path='/register' element={<RegisterPage />} />
                     <Route path='/' element={<MainPage />} />
                     <Route path='*' element={<PageNotFound />} />
-                    <Route path='/' element={<MainPage />} />
+                    {/* <Route path='/' element={<MainPage />} /> */}
                 </Routes>
             </Router>  
         </>
