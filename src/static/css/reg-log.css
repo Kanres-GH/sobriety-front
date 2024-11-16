@@ -174,6 +174,10 @@ input:-webkit-autofill:active{
     gap: 5px;
 }
 
+.reg-log-main-content-form-input input::placeholder {
+    opacity: 0.5;
+}
+
 .reg-log-span {
     text-decoration: underline;
     color: rgb(125, 138, 255);

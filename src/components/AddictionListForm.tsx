@@ -1,8 +1,14 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-export default function AddictionListForm() {
+type AddictionListFormProps = {
+    addiction: string;
+    setAddiction: (value: string) => void;
+    error: string;
+};
 
-    const [addiction, setAddiction] = useState("Select from the list below.")
+export default function AddictionListForm({ addiction, setAddiction, error }: AddictionListFormProps) {
+
+    // const [addiction, setAddiction] = useState("Select from the list below.")
     function handleClick(e: React.MouseEvent<HTMLLIElement>) {
         setAddiction(e.currentTarget.innerHTML);
     }
@@ -12,8 +18,9 @@ export default function AddictionListForm() {
             <div className="reg-log-main-content-heading">
                 <h1 style={{fontWeight: '500', fontSize: '1.6em', textAlign: 'center', letterSpacing: 1.5}}>What kind of addiction do you want to get rid of?</h1>
             </div>
-            <p style={{color: 'gray', alignSelf: 'center'}}>You can add more later.</p>
             <span style={{color: '#6de38c', alignSelf: 'center', fontSize: '1.5em', letterSpacing: 1.5, cursor: 'auto'}}>{addiction}</span>
+            <p style={{color: 'gray', alignSelf: 'center'}}>You can add more later.</p>
+
             <div className="reg-log-main-ul">
                 <ul className="reg-log-ul" id="addiction-list">
                     <li tabIndex={0} value="alcohol" onClick={handleClick} >Alcohol</li>
@@ -47,7 +54,7 @@ export default function AddictionListForm() {
                     <li tabIndex={0} value="antidepressants" onClick={handleClick}>Antidepressants</li>
                 </ul>
             </div>
-            
+            {error && <p style={{ color: 'red', alignSelf: 'center' }}>{error}</p>}
         </>
     );
 }

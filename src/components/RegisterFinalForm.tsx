@@ -17,7 +17,7 @@ export default function RegisterFinalForm() {
                 <hr style={{display: 'block', borderColor: '#ffffff', border: 0, height: '1px', borderTop: '1px solid #5c5c5c', width: '50%', alignSelf: 'center'}}/>
                 <div className="reg-log-checkbox">
                     <input type="checkbox" className="reg-log-check"/>
-                    <label style={{fontSize: 'small'}}>I agree to receive newsletters and keep me updated on new products and promotions.</label>
+                    <label style={{fontSize: 'small'}}>I agree to receive newsletters and keep me updated on new products and promotions (optional)</label>
                 </div>
             </form>
         </>

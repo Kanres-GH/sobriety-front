@@ -4,7 +4,6 @@ import MainPage from './components/MainPage'
 import LoginPage from './components/LoginPage'
 import RegisterPage from './components/RegisterPage'
 import PageNotFound from './components/PageNotFound'
-import { useState, useEffect } from 'react'
 
 export default function App() {
 
