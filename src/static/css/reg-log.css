@@ -183,6 +183,6 @@ input:-webkit-autofill:active{
     color: rgb(125, 138, 255);
 }
 
-span:hover {
+.reg-log-span:hover {
     cursor: pointer;
 }

@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import logo from '../static/imgs/logo.svg'
 import '../static/css/reg-log.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
 
+    const navigate = useNavigate()
+
+    function onSubmit() {
+        navigate("/");
+    }
     return (
         <div className='reg-log'>
             <div className="reg-log-img" />
@@ -27,7 +33,7 @@ export default function LoginPage() {
                         </form>
                     </div>
                     
-                    <button className='login-btn'>Sign in</button>
+                    <button className='login-btn' type='submit' onClick={onSubmit}>Sign in</button>
                     <p>Don't have an account? <Link to='/register'><span className='reg-log-span'>Sign up</span></Link></p>
                 </div>
             </div>

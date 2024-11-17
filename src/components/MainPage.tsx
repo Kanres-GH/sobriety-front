@@ -1,8 +1,10 @@
+import '../static/css/main-page.css'
+import Navbar from './Navbar';
 export default function MainPage() {
 
     return (
-        <>
-            <h1 style={{color: 'black', fontSize: '48px'}}>Main Page</h1>
-        </>
+        <div className='main'>
+            <Navbar />
+        </div>
     );
 }
