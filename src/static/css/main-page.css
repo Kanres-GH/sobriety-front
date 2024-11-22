@@ -4,4 +4,58 @@ body {
 
 .main {
     display: flex;
+    /* border: 1px solid yellow; */
+    width: 100vw;
+}
+
+.main-dashboard {
+    display: flex;
+    /* border: 1px solid rgb(255, 0, 0); */
+    width: 45%;
+    padding: 10px 20px;
+}
+
+.navmain {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    /* gap: 50px; */
+}
+
+.navmain h3 {
+    display: flex;
+    text-wrap: nowrap;
+    gap: 10px;
+}
+
+.navmain-input {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 7px;
+    height: 40px;
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+    /* width: 100%; */
+}
+
+.navmain-input input {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.navmain-input input::placeholder {
+    color: gray
+}
+
+.navmain-input img {
+    width: 20px;
+    filter: invert(100%)
 }

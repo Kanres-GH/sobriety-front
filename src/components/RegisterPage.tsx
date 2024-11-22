@@ -105,11 +105,20 @@ export default function RegisterPage() {
 
     function onSubmit(e: FormEvent) {
         e.preventDefault();
+
         if (isLastStep) {
             navigate("/");
-        }
-        else if (validateStep()) {
+        } else if (validateStep()) {
             next();
+        }
+    }
+
+    function handleBack() {
+        if (!isFirstStep) {
+            const newErrors = { ...errors };
+            if (currentStepIndex === 1) newErrors.addiction = "";
+            setErrors(newErrors);
+            back();
         }
     }
 
@@ -140,7 +149,7 @@ export default function RegisterPage() {
                                     <button
                                         className="reg-log-btn"
                                         type="button"
-                                        onClick={back}
+                                        onClick={handleBack}
                                     >
                                         Back
                                     </button>
