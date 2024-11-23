@@ -7,6 +7,11 @@
     padding: 0;
 }
 
+html {
+    min-height: 100% !important;
+    height: 100%;
+}
+
 body {
     margin: 0;
     display: flex;
