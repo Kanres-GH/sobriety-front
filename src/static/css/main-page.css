@@ -141,9 +141,10 @@ body {
 
 .side-calendar-header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     margin-bottom: 10px;
+    gap: 30px;
 }
 
 .side-calendar-header h3 {

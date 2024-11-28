@@ -23,19 +23,19 @@ export default function Navbar() {
             <hr className="navbar-hr"/>
             <div className="navbar-main-current">
                 <ul className="navbar-ul">
-                    <Link to="/dashboard">
+                    <Link to="/tracker/dashboard">
                         <li className="navbar-li navbar-li-current">
                             <img src={dashboardIcon} className="navbar-icon-current" />
                             Dashboard
                         </li>
                     </Link>
-                    <Link to="/dashboard">
+                    <Link to="tracker/savings">
                         <li className="navbar-li navbar-li-current">
                             <img src={savingsIcon} className="navbar-icon-current" />
                             Savings
                         </li>
                     </Link>
-                    <Link to="/dashboard">
+                    <Link to="tracker/calendar">
                         <li className="navbar-li navbar-li-current">
                             <img src={calendarIcon} className="navbar-icon-current" />
                             Calendar
@@ -46,13 +46,13 @@ export default function Navbar() {
             <hr className="navbar-hr"/>
             <div className="navbar-main-list">
                 <ul className="navbar-ul">
-                    <Link to="/calendar">
+                    <Link to="/dashboard">
                         <li className="navbar-li navbar-li-list">
                             <img src={trackerIcon} className="navbar-icon-list" />
                             Tracker
                         </li>
                     </Link>
-                    <Link to="/calendar">
+                    <Link to="/community">
                         <li className="navbar-li navbar-li-list">
                             <img src={communityIcon} className="navbar-icon-list" />
                             Community

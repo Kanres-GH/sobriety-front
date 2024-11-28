@@ -19,12 +19,12 @@ export default function App() {
                 <Route path='*' element={<PageNotFound />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/register' element={<RegisterPage />} />
-                <Route path='/dashboard' element={<MainPage />} />
+                <Route path='/tracker/dashboard' element={<MainPage />} />
                 <Route path='/settings' element={<SettingsPage />} />
                 <Route path='/profile' element={<ProfilePage />} />
                 <Route path='/community' element={<CommunityPage />} />
-                <Route path='/savings' element={<SavingsPage />} />
-                <Route path='/calendar' element={<CalendarPage />} />
+                <Route path='/tracker/savings' element={<SavingsPage />} />
+                <Route path='/tracker/calendar' element={<CalendarPage />} />
                 <Route path='/workbook' element={<WorkbookPage />} />
             </Routes>
         </Router>  

@@ -2,7 +2,7 @@ import '../static/css/main-page.css'
 import avatar from '../static/imgs/avatar.jpg'
 import markerIcon from '../static/imgs/icons/marker.svg'
 import SideCalendar from './SideCalendar';
-import bellIcon from '../static/imgs/icons/bell.svg'
+// import bellIcon from '../static/imgs/icons/bell.svg'
 
 export default function SideProfile() {
 
@@ -41,7 +41,7 @@ export default function SideProfile() {
                 <SideCalendar />
             </div>
             <hr className='main-hr' style={{width: '80%', alignSelf: 'center', borderTop: 'none'}}/>
-            <div className="side-profile-upcoming">
+            {/* <div className="side-profile-upcoming">
                 <h2 style={{color: 'white', fontWeight: 'bold', fontSize: '18px', letterSpacing: 1.5}}>Upcoming</h2>
                 <div className="side-profile-upcoming-items">
                     <div className="side-profile-upcoming-item">
@@ -66,7 +66,7 @@ export default function SideProfile() {
                     </div>
                 </div>
                 <hr className='main-hr' style={{width: '80%', alignSelf: 'center', borderTop: 'none'}}/>
-            </div>
+            </div> */}
             <div className="side-profile-footer">
                 
             </div>
