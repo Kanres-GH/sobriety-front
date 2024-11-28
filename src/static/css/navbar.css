@@ -38,9 +38,10 @@
     padding: 0 20px;
     height: 40px;
     align-items: center;
-    transition: color 0.25s, filter 0.25s;
+    transition: 0.25s;
     font-weight: bold;
     gap: 20px;
+    opacity: 0.75;
 }
 
 .navbar-li img {
@@ -49,6 +50,7 @@
 
 .navbar-li:hover {
     color: white;
+    opacity: 1;
 }
 
 .navbar-li:hover img {
@@ -107,4 +109,15 @@
 .navbar-icon-list {
     height: 50%;
     filter: invert(100%) sepia(20%) saturate(7491%) hue-rotate(57deg) brightness(109%) contrast(75%);
+}
+
+.active-link {
+    background-color: #5a5c6d;
+    color: white;
+    transition: 0.25s;
+    opacity: 1;
+}
+
+.active-link img {
+    filter: invert(100%) sepia(5%) saturate(500%) hue-rotate(200deg) brightness(100%) contrast(90%);
 }
