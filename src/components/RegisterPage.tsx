@@ -107,7 +107,7 @@ export default function RegisterPage() {
         e.preventDefault();
 
         if (isLastStep) {
-            navigate("/");
+            navigate("/tracker/dashboard");
         } else if (validateStep()) {
             next();
         }

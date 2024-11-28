@@ -8,7 +8,7 @@ export default function LoginPage() {
     const navigate = useNavigate()
 
     function onSubmit() {
-        navigate("/");
+        navigate("/tracker/dashboard");
     }
     return (
         <div className='reg-log'>

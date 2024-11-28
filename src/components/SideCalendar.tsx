@@ -13,9 +13,6 @@ export default function SideCalendar() {
             <div className="side-calendar-header">
                 <h3 style={{ color: 'white' }}>{currentDate.toLocaleString('en-us', { month: 'long' })}</h3>
                 <p style={{ color: '#ababab' }}>{currentDate.getFullYear()}</p>
-                {/* <a href="#" className="side-calendar-add-reminder" style={{ color: '#00aaff' }}>
-                    Add reminder
-                </a> */}
             </div>
             <div className="side-calendar-days">
                 {daysToDisplay.map((day, index) => {

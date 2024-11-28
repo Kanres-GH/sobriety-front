@@ -46,7 +46,7 @@ export default function Navbar() {
             <hr className="navbar-hr"/>
             <div className="navbar-main-list">
                 <ul className="navbar-ul">
-                    <Link to="/dashboard">
+                    <Link to="/tracker/dashboard">
                         <li className="navbar-li navbar-li-list">
                             <img src={trackerIcon} className="navbar-icon-list" />
                             Tracker
