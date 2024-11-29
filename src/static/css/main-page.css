@@ -9,7 +9,7 @@ body {
     height: 100vh;
 }
 
-.main-dashboard, .main-savings, .main-calendar, .main-community, .main-daily {
+.main-dashboard, .main-savings, .main-calendar, .main-feed, .main-daily, .main-following, .main-settings, .main-pledge, .main-workbook, .main-motivation {
     display: flex;
     flex-direction: column;
     /* border: 1px solid rgb(255, 0, 0); */
@@ -169,10 +169,13 @@ body {
 }
 
 .side-calendar-days {
+    /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+    gap: 5px;
+    width: 300px;
     position: relative;
     overflow: hidden;
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
@@ -683,13 +686,40 @@ body {
     align-items: center;
     color: white;
     gap: 10px;
+    border: 1px solid rgb(104, 104, 104);
   }
   
   .calendar-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     text-align: center;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.calendar-nav-button {
+    background-color: #464646;
+    border: none;
+    color: white;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid gray;
+    transition: 0.25s;
+}
+
+.calendar-nav-button:hover {
+    background-color: rgb(95, 95, 95);
+    border: 1px solid white;
+}
+
+.calendar-nav-button:focus {
+    outline: none;
 }
 
 .calendar-grid {

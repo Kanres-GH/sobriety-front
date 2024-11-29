@@ -7,6 +7,9 @@ import userIcon from '../static/imgs/icons/circle-user.svg'
 
 export default function SideProfile() {
 
+    const soberDays = ["2024-11-20", "2024-11-21", "2024-11-22", "2024-11-19", "2024-11-23", "2024-11-24", "2024-11-25", "2024-11-26", "2024-11-28", "2024-11-29"];
+    const resetDays = ["2024-11-27"];
+
     return (
         <div className="side-profile">
             <div className="side-profile-user">
@@ -30,7 +33,7 @@ export default function SideProfile() {
                 </div>
             </div>
             <div className="side-profile-calendar">
-                <SideCalendar />
+                <SideCalendar soberDays={soberDays} resetDays={resetDays} />
             </div>
             <hr className='main-hr' style={{width: '80%', alignSelf: 'center', borderTop: 'none'}}/>
             

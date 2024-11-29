@@ -11,6 +11,8 @@ import CommunityPage from './components/CommunityPage'
 import ProfilePage from './components/ProfilePage'
 import WorkbookPage from './components/WorkbookPage'
 import DailyPage from './components/DailyPage'
+import FollowingPage from './components/FollowingPage'
+import MotivationPage from './components/MotivatonPage'
 
 export default function App() {
 
@@ -23,11 +25,13 @@ export default function App() {
                 <Route path='/tracker/dashboard' element={<MainPage />} />
                 <Route path='/settings' element={<SettingsPage />} />
                 <Route path='/profile' element={<ProfilePage />} />
-                <Route path='/community' element={<CommunityPage />} />
+                <Route path='/community/feed' element={<CommunityPage />} />
+                <Route path='/community/following' element={<FollowingPage />} />
                 <Route path='/tracker/savings' element={<SavingsPage />} />
                 <Route path='/tracker/calendar' element={<CalendarPage />} />
-                <Route path='/workbook' element={<WorkbookPage />} />
-                <Route path='/daily' element={<DailyPage />} />
+                <Route path='/daily/workbook' element={<WorkbookPage />} />
+                <Route path='/daily/pledge' element={<DailyPage />} />
+                <Route path='/daily/motivation' element={<MotivationPage />} />
             </Routes>
         </Router>  
     )

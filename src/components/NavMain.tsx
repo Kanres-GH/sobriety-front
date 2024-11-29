@@ -10,8 +10,13 @@ export default function NavMain() {
         "/tracker/dashboard" : "Tracker / Dashboard",
         "/tracker/savings" : "Tracker / Savings",
         "/tracker/calendar" : "Tracker / Calendar",
-        "/community" : "Community",
-        "/daily" : "Daily"
+        "/community/feed" : "Community / Feed",
+        "/community/following" : "Community / Following",
+        "/daily/pledge" : "Daily / Pledge",
+        "/daily/motivation" : "Daily / Motivation",
+        "/daily/workbook" : "Daily / Workbook",
+        "/settings" : "Settings",
+        "/settings/profile" : "Settings / Profile"
     }
 
     return (

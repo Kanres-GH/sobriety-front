@@ -7,7 +7,7 @@ export default function CommunityPage() {
     return (
         <div className='main'>
             <Navbar />
-            <div className="main-community">
+            <div className="main-feed">
                 <NavMain />
             </div>
         </div>
