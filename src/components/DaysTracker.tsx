@@ -9,11 +9,11 @@ export default function DaysTracker() {
         {
             id: 1,
             content:
-                <>
+                <div className='main-tracker-wrapper tracker-div'>
                     <div className='main-tracker-header' style={{width: '100%', textAlign: 'center', margin: '5px'}}>
                         <span style={{color: 'rgb(255, 255, 255, 0.7)', fontSize: '12px'}}>I've been alcohol free for</span>
                     </div>
-                    <hr style={{width: '100%'}}/>
+                    <hr style={{width: '80%'}}/>
                     <div className="main-tracker">
                         <hr className='main-hr' style={{height: '100%', borderColor: 'white', borderLeft: 'none'}}/>
                         <div className="main-tracker-digits" style={{background: `linear-gradient(0deg, #4EAB5F ${0}%, rgb(0, 0, 0, 0) 0%)`}}>
@@ -59,16 +59,30 @@ export default function DaysTracker() {
                         </div>
                         <hr className='main-hr' style={{height: '100%', borderColor: 'white', borderLeft: 'none'}}/>
                     </div>
-                </>
+                </div>
             ,
         },
         {
             id: 2,
-            content: <div className="simple-tracker"></div>,
+            content:
+            <div className="streak-tracker tracker-div">
+                <p style={{fontWeight: '300'}}>My sober streak is</p>
+                <div className="streak-tracker-box">
+                    <h1 style={{fontSize: '96px'}}>74</h1>
+                </div>
+                <p style={{fontWeight: '300'}}>days</p>
+            </div>
         },
         {
             id: 3,
-            content: <div className="streak-tracker"></div>,
+            content:
+            <div className="start-tracker">
+                <p style={{position: 'absolute', top: '10px', fontWeight: '300'}}>My sober start date</p>
+                <div className="start-tracker-box">
+                    <h1 style={{fontSize: '60px'}}>27 November 2024</h1>
+                    <p style={{color: '#acacac', fontWeight: '300'}}>18:26</p>
+                </div>
+            </div>
         },
     ];
     
