@@ -1,6 +1,7 @@
 import '../static/css/main-page.css'
 import Navbar from './Navbar';
 import NavMain from './NavMain';
+import SideProfile from './SideProfile';
 
 export default function CalendarPage() {
 
@@ -10,6 +11,7 @@ export default function CalendarPage() {
             <div className="main-calendar">
                 <NavMain />
             </div>
+            <SideProfile />
         </div>
     );
 }

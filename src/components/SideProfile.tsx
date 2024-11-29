@@ -36,17 +36,50 @@ export default function SideProfile() {
             
             <h1 style={{fontSize: '20px', fontWeight: 'bold'}}>Latest Posts</h1>
             <div className="side-profile-footer">
+
                 <div className="side-profile-post">
                     <div className="side-profile-post-pfp">
                         <img src={userIcon} alt="User" />
                     </div>
                     <div className="side-profile-post-content">
-                        <h3 style={{color: 'white', fontSize: '14px'}}><span style={{fontWeight: '600'}}>Dennis Nedry</span> commented on <span style={{fontWeight: '600'}}>Isla Nublar</span>'s post</h3>
-                        <p style={{fontSize: '14px', color: 'rgb(255, 255, 255, 0.75)', fontWeight: '300'}}>That's fire! Keep it up 🔥🔥</p>
+                        <h3 style={{color: 'white', fontSize: '12px'}}><span style={{fontWeight: '600'}}>Dennis Nedry</span> commented on <span style={{fontWeight: '600'}}>Isla Nublar</span>'s post</h3>
+                        <p style={{fontSize: '12px', color: 'rgb(255, 255, 255, 0.75)', fontWeight: '300'}}>That's fire! Keep it up 🔥🔥</p>
                         <span style={{color: 'rgb(255, 255, 255, 0.5)', fontSize: '12px', fontWeight: '200'}}>12 minutes ago</span>
                     </div>
                 </div>
                 
+                <div className="side-profile-post">
+                    <div className="side-profile-post-pfp">
+                        <img src={userIcon} alt="User" />
+                    </div>
+                    <div className="side-profile-post-content">
+                        <h3 style={{color: 'white', fontSize: '12px'}}><span style={{fontWeight: '600'}}>Dennis Nedry</span> commented on <span style={{fontWeight: '600'}}>Isla Nublar</span>'s post</h3>
+                        <p style={{fontSize: '12px', color: 'rgb(255, 255, 255, 0.75)', fontWeight: '300'}}>That's fire! Keep it up 🔥🔥</p>
+                        <span style={{color: 'rgb(255, 255, 255, 0.5)', fontSize: '12px', fontWeight: '200'}}>12 minutes ago</span>
+                    </div>
+                </div>
+
+                <div className="side-profile-post">
+                    <div className="side-profile-post-pfp">
+                        <img src={userIcon} alt="User" />
+                    </div>
+                    <div className="side-profile-post-content">
+                        <h3 style={{color: 'white', fontSize: '12px'}}><span style={{fontWeight: '600'}}>Dennis Nedry</span> commented on <span style={{fontWeight: '600'}}>Isla Nublar</span>'s post</h3>
+                        <p style={{fontSize: '12px', color: 'rgb(255, 255, 255, 0.75)', fontWeight: '300'}}>That's fire! Keep it up 🔥🔥</p>
+                        <span style={{color: 'rgb(255, 255, 255, 0.5)', fontSize: '12px', fontWeight: '200'}}>12 minutes ago</span>
+                    </div>
+                </div>
+
+                <div className="side-profile-post">
+                    <div className="side-profile-post-pfp">
+                        <img src={userIcon} alt="User" />
+                    </div>
+                    <div className="side-profile-post-content">
+                        <h3 style={{color: 'white', fontSize: '12px'}}><span style={{fontWeight: '600'}}>Dennis Nedry</span> commented on <span style={{fontWeight: '600'}}>Isla Nublar</span>'s post</h3>
+                        <p style={{fontSize: '12px', color: 'rgb(255, 255, 255, 0.75)', fontWeight: '300'}}>That's fire! Keep it up 🔥🔥</p>
+                        <span style={{color: 'rgb(255, 255, 255, 0.5)', fontSize: '12px', fontWeight: '200'}}>12 minutes ago</span>
+                    </div>
+                </div>
             </div>
         </div>
     );

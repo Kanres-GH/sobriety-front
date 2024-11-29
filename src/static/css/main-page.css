@@ -19,6 +19,8 @@ body {
     gap: 15px;
 }
 
+/* -- NAVMAIN -- */
+
 .navmain {
     display: flex;
     justify-content: space-between;
@@ -61,6 +63,8 @@ body {
     width: 20px;
     filter: invert(100%)
 }
+
+/* -- SIDE PROFILE -- */
 
 .side-profile {
     display: flex;
@@ -118,6 +122,7 @@ body {
 .side-profile-p {
     display: flex;
     font-weight: 300;
+    font-size: 14px;
 }
 
 .side-profile-p img {
@@ -196,21 +201,29 @@ body {
 
 .side-profile-footer {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     background: linear-gradient(to bottom, #1F1F1F, #0A0A0A);
-    border-radius: 20px;
-    padding: 10px 0;
+    border-radius: 10px;
+    /* padding: 10px 0; */
+    overflow: hidden;
     /* flex-direction: column; */
 }
 
 .side-profile-post {
     display: flex;
     align-items: center;
-    height: 100px;
+    /* height: 100px; */
     padding: 5px 10px;
     gap: 10px;
+    
     /* border: 1px solid red; */
+}
+
+.side-profile-post:hover {
+    cursor: pointer;
+    background-color: rgb(46, 46, 46);
 }
 
 .side-profile-post-pfp {
@@ -219,13 +232,13 @@ body {
     filter: invert();
 }
 
-/* .side-profile-post-content {
-    border: 1px solid green;
-} */
+/*  */
 
 .main-hr {
     border: 1px solid rgb(102, 102, 102);
 }
+
+/* -- MAIN DASHBOARD -- */
 
 .main-dashboard-banner {
     display: flex;
@@ -295,6 +308,7 @@ body {
     gap: 10px;
 }
 
+/* -- MILESTONES -- */
 
 .milestone-tracker {
     display: flex;
@@ -456,13 +470,11 @@ body {
     width: 100%;
     height: 100%;
     transition: --pbHeight 0.25s ease-in-out;
-    background: linear-gradient(0deg, #4EAB5F var(--pbHeight), rgb(0, 0, 0, 0) 0%);
+    /* background: linear-gradient(0deg, #4EAB5F var(--pbHeight), rgb(0, 0, 0, 0) 0%); */
     /* border: 1px solid red; */
 }
 
-/* Ладно, в следующий раз доделаю */
-
-@property --pbHeight {
+@property --pbHeight {      /* Ладно, в следующий раз доделаю */
     syntax: '<percentage>';
     initial-value: 0%;
     inherits: false;
@@ -499,6 +511,25 @@ body {
     width: 100%;
     /* border: 1px solid red; */
 }
+
+.streak-tracker-box, .start-tracker-box {
+    cursor: default;
+    transition: 0.4s;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.streak-tracker-box:hover, .start-tracker-box:hover {
+    transition: 0.4s;
+    scale: 1.2;
+}
+
+.start-tracker-box {
+    text-align: center;
+}
+
+/* -- CURRENT MILESTONE -- */
 
 .current-milestone {
     text-align: center;
@@ -550,19 +581,81 @@ body {
 	}
 }
 
-.streak-tracker-box, .start-tracker-box {
-    cursor: default;
-    transition: 0.4s;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+/* -- SAVINGS -- */
+
+.savings-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    gap: 10px;
 }
 
-.streak-tracker-box:hover, .start-tracker-box:hover {
-    transition: 0.4s;
-    scale: 1.2;
+.savings-nav {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(150, 150, 150);
+    gap: 10px;
 }
 
-.start-tracker-box {
-    text-align: center;
+.savings-nav-item {
+    display: flex;
+    align-items: center;
+    background-color: #124f7a;
+    /* height: 50px; */
+    padding: 10px 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.savings-nav-item.active {
+    font-weight: 600;
+    color: white;
+    background-color: #1A77BA;
+}
+
+.savings-nav-item:hover {
+    background-color: #115d94;
+    border-color: white;
+}
+
+.savings-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.savings-summary-total h1 {
+    font-size: 56px;
+    font-weight: 500;
+}
+
+.savings-summary-total p {
+    font-size: 14px;
+    color: gray;
+}
+
+.savings-summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.savings-summary-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #474747;
+    padding: 5px 0px;
+}
+
+.savings-summary-item-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
