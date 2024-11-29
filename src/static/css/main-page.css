@@ -659,3 +659,117 @@ body {
     gap: 10px;
     align-items: center;
 }
+
+/* -- CALENDAR -- */
+
+.calendar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.calendar-box {
+    /* max-width: 600px; */
+    height: 100%;
+    width: 100%;
+    background-color: #2d2f34;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 10px;
+  }
+  
+  .calendar-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.calendar-grid {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.calendar-day-header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: lightgray;
+}
+
+.calendar-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* aspect-ratio: 1; */
+    border-radius: 5px;
+    font-size: 2vw;
+    background-color: #3a3b40;
+    transition: 0.3s ease;
+    opacity: 0.7;
+    cursor: pointer;
+    border: 1px solid rgb(117, 117, 117);
+}
+
+.calendar-day:hover {
+    /* background-color: #636363; */
+    scale: 1.1;
+    opacity: 1;
+}
+
+.calendar-sober {
+    background-color: #369151;
+    color: white;
+}
+
+.calendar-reset {
+    background-color: #c44817;
+    color: white;
+}
+
+.calendar-current {
+    background-color: #2196f3;
+    color: white;
+}
+
+.calendar-empty {
+    background-color: transparent;
+    pointer-events: none;
+    border: none;
+}
+
+.calendar-empty:hover {
+    background-color: red;
+}
+
+.gradient-background {
+    background: linear-gradient(168deg,#000000,#2b2b2d,#212125,#555559);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
