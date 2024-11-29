@@ -1,6 +1,7 @@
 import '../static/css/main-page.css'
 import MilestoneTracker from './MileStoneTracker';
 import DaysTracker from './DaysTracker';
+import CurrentMilestone from './CurrentMilestone';
 
 export default function Dashboard() {
 
@@ -13,21 +14,21 @@ export default function Dashboard() {
                 <div className="dashboard-milestone-tracker">
                     <MilestoneTracker />
                 </div>
-                <hr style={{opacity: 0.5, width: '75%', alignSelf: 'center'}} />
-                <h2 style={{color: 'white', fontSize: '22px'}}>So far I have saved...</h2>
-                <div className="dashboard-savings-block" style={{    justifyContent: "space-between"}}>
-                    <p style={{color: '#D6D6D6', fontSize: '20px'}}>Money saved:</p>
-                    <span style={{color: '#77FF6A', fontWeight: 'bold', fontSize: '20px'}}>$0.00</span>
+                
+                <h2 style={{color: 'white', fontSize: '18px', fontWeight: '500'}}>So far I have saved...</h2>
+                <div className="dashboard-block" style={{    justifyContent: "space-between"}}>
+                    <p style={{color: '#D6D6D6'}}>Money saved:</p>
+                    <span style={{color: '#77FF6A', fontWeight: 'bold'}}>$0.00</span>
                 </div>
-                <hr style={{opacity: 0.5, width: '75%', alignSelf: 'center'}} />
-                <h2 style={{color: 'white', fontSize: '22px'}}>I'm doing this because...</h2>
-                <div className="dashboard-savings-block" style={{justifyContent: 'center'}}>
+                
+                <h2 style={{color: 'white', fontSize: '18px', fontWeight: '500'}}>I'm doing this because...</h2>
+                <div className="dashboard-block" style={{justifyContent: 'center'}}>
                     <p style={{color: '#D6D6D6', fontSize: '16px'}}>I want to be a better person.</p>
                 </div>
             </div>
             
             <div className="dashboard-grid-item grid-item-3">
-                
+                <CurrentMilestone />
             </div>
         </div>
     );

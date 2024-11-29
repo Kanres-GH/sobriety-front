@@ -25,8 +25,8 @@ export default function SideCalendar() {
                                 backgroundColor: isToday ? '#386955' : 'transparent',
                             }}
                         >
-                            <p>{day.toLocaleString('en-us', { weekday: 'short' })}</p>
-                            <p style={{fontWeight: 'bold', fontSize: '15px'}}>{day.getDate()}</p>
+                            <p style={{fontWeight: '300', fontSize: '12px'}}>{day.toLocaleString('en-us', { weekday: 'short' })}</p>
+                            <p style={{fontWeight: '600', fontSize: '15px'}}>{day.getDate()}</p>
                         </div>
                     );
                 })}

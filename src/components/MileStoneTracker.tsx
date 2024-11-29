@@ -12,7 +12,7 @@ export default function MilestoneTracker() {
   return (
     <>
         <div className="milestone-tracker">
-            <h2 className="milestone-title">10 Weeks</h2>
+            <h2 className="milestone-title" style={{fontWeight: '500'}}>10 Weeks</h2>
             <div className="milestone-progress-bar">
                 <div className="progress-line">
                 {milestones.map((milestone, index) => (
@@ -22,13 +22,13 @@ export default function MilestoneTracker() {
                         milestone.completed ? 'completed' : 'upcoming'
                     }`}
                     >
-                    {milestone.completed ? <span>&#10003;</span> : <span>{milestone.labelShort}</span>}
+                    {milestone.completed ? <span>&#10003;</span> : <span style={{fontWeight: '400'}}>{milestone.labelShort}</span>}
                     </div>
                 ))}
                 </div>
                 <div className="milestone-labels">
                 {milestones.map((milestone, index) => (
-                    <div key={index} className="milestone-label" style={{fontWeight: 'bold', letterSpacing: 0.5}}>
+                    <div key={index} className="milestone-label" style={{fontWeight: '200', letterSpacing: 0.5}}>
                     {milestone.label}
                     </div>
                 ))}

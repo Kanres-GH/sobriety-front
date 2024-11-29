@@ -70,10 +70,6 @@ export default function DaysTracker() {
             id: 3,
             content: <div className="streak-tracker"></div>,
         },
-        {
-            id: 4,
-            content: <div className="first-day"></div>,
-        },
     ];
     
     const nextItem = () => {

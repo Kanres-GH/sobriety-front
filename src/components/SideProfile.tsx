@@ -23,13 +23,8 @@ export default function SideProfile() {
                 </div>
                 <div className="side-profile-info-2">
                     <div className="side-profile-info-2-item">
-                        <p style={{color: '#ababab'}}>Addiction</p>
-                        <p style={{color: 'white', fontWeight: 'bold'}}>Alcohol</p>
-                    </div>
-                    <hr className='main-hr' style={{height: '100%', borderLeft: 'none'}}/>
-                    <div className="side-profile-info-2-item">
-                        <p style={{color: '#ababab'}}>Weight</p>
-                        <p style={{color: 'white', fontWeight: 'bold'}}>80kg</p>
+                        <p style={{color: '#ababab', fontSize: '12px'}}>Addiction</p>
+                        <p style={{color: 'white', fontWeight: 'bold', letterSpacing: 1}}>Alcohol</p>
                     </div>
                     
                 </div>
@@ -46,9 +41,9 @@ export default function SideProfile() {
                         <img src={userIcon} alt="User" />
                     </div>
                     <div className="side-profile-post-content">
-                        <h3 style={{color: 'white', fontSize: '14px'}}><span style={{fontWeight: 'bold'}}>Dennis Nedry</span> commented on <span style={{fontWeight: 'bold'}}>Isla Nublar</span>'s post</h3>
-                        <p style={{fontSize: '14px', color: 'rgb(255, 255, 255, 0.75)'}}>That's fire! Keep it up 🔥🔥</p>
-                        <span style={{color: 'rgb(255, 255, 255, 0.5)', fontSize: '12px'}}>12 minutes ago</span>
+                        <h3 style={{color: 'white', fontSize: '14px'}}><span style={{fontWeight: '600'}}>Dennis Nedry</span> commented on <span style={{fontWeight: '600'}}>Isla Nublar</span>'s post</h3>
+                        <p style={{fontSize: '14px', color: 'rgb(255, 255, 255, 0.75)', fontWeight: '300'}}>That's fire! Keep it up 🔥🔥</p>
+                        <span style={{color: 'rgb(255, 255, 255, 0.5)', fontSize: '12px', fontWeight: '200'}}>12 minutes ago</span>
                     </div>
                 </div>
                 

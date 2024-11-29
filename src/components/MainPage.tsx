@@ -20,8 +20,8 @@ export default function MainPage() {
                                 <p>Welcome back to the NEW ME!</p>
                                 <p>Enjoy your stay and don’t forget to look after yourself!</p>
                             </div>
-                            <div className="main-dashboard-banner-span" style={{display: 'flex', fontWeight: 'bold', cursor: 'pointer', fontSize: '14px'}}>
-                                <span style={{backgroundColor: '#1CA06B', padding: '5px 10px', color: 'white', borderRadius: '20px'}}>Make a Pledge</span>
+                            <div className="main-dashboard-banner-span" style={{display: 'flex', fontWeight: '500', cursor: 'pointer', fontSize: '12px'}}>
+                                <button style={{backgroundColor: '#2FA950', color: 'white', borderRadius: '20px'}}>Make a Pledge &gt;</button>
                                 {/* <img src={angleIcon} style={{height: '100%', filter: 'invert(90%) sepia(23%) saturate(589%) hue-rotate(70deg) brightness(102%) contrast(101%)'}} /> */}
                             </div>
                         </div>

@@ -39,7 +39,7 @@
     height: 40px;
     align-items: center;
     transition: 0.25s;
-    font-weight: bold;
+    font-weight: 600;
     gap: 20px;
     opacity: 0.75;
 }

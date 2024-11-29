@@ -70,7 +70,7 @@ export default function Navbar() {
             <div className="navbar-main-bottom">
                 <ul className="navbar-ul">
                     <Link to="/settings">
-                        <li className={`navbar-li ${isActive(["/settings"]) ? "active-link" : ""}`}>
+                        <li className={`navbar-li ${isActive(["/settings"]) ? "active-link" : ""} navbar-li-bottom`}>
                             <img src={settingsIcon} className="navbar-icon-bottom" />
                             Settings
                         </li>

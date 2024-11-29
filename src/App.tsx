@@ -10,6 +10,7 @@ import SavingsPage from './components/SavingsPage'
 import CommunityPage from './components/CommunityPage'
 import ProfilePage from './components/ProfilePage'
 import WorkbookPage from './components/WorkbookPage'
+import DailyPage from './components/DailyPage'
 
 export default function App() {
 
@@ -26,6 +27,7 @@ export default function App() {
                 <Route path='/tracker/savings' element={<SavingsPage />} />
                 <Route path='/tracker/calendar' element={<CalendarPage />} />
                 <Route path='/workbook' element={<WorkbookPage />} />
+                <Route path='/daily' element={<DailyPage />} />
             </Routes>
         </Router>  
     )
