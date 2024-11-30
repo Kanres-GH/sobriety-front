@@ -2,6 +2,7 @@ import '../static/css/main-page.css'
 import rightCircle from '../static/imgs/icons/angle-circle-right.svg'
 import leftCircle from '../static/imgs/icons/angle-circle-left.svg'
 import { useState } from 'react';
+import resetIcon from '../static/imgs/icons/duration.svg'
 
 export default function DaysTracker() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -102,6 +103,9 @@ export default function DaysTracker() {
             <div className="days-tracker-nav">
                 <img src={leftCircle} onClick={prevItem}/>
                 <img src={rightCircle} onClick={nextItem} />
+            </div>
+            <div className="days-tracker-reset">
+                <img src={resetIcon} />
             </div>
         </div>
     );

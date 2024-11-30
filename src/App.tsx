@@ -24,13 +24,13 @@ export default function App() {
                 <Route path='/register' element={<RegisterPage />} />
                 <Route path='/tracker/dashboard' element={<MainPage />} />
                 <Route path='/settings' element={<SettingsPage />} />
-                <Route path='/profile' element={<ProfilePage />} />
                 <Route path='/community/feed' element={<CommunityPage />} />
                 <Route path='/community/following' element={<FeedFollowing />} />
                 <Route path='/tracker/savings' element={<SavingsPage />} />
                 <Route path='/tracker/calendar' element={<CalendarPage />} />
                 <Route path='/daily/workbook' element={<WorkbookPage />} />
                 <Route path='/daily/motivation' element={<MotivationPage />} />
+                <Route path='/community/profile' element={<ProfilePage />} />
             </Routes>
         </Router>  
     )

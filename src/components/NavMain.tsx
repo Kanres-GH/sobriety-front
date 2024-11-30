@@ -15,7 +15,8 @@ export default function NavMain() {
         "/daily/motivation" : "Daily / Motivation",
         "/daily/workbook" : "Daily / Workbook",
         "/settings" : "Settings",
-        "/settings/profile" : "Settings / Profile"
+        "/settings/profile" : "Settings / Profile",
+        "/community/profile" : "Community / Profile"
     }
 
     return (
