@@ -10,8 +10,8 @@ import SavingsPage from './components/SavingsPage'
 import CommunityPage from './components/CommunityPage'
 import ProfilePage from './components/ProfilePage'
 import WorkbookPage from './components/WorkbookPage'
-import DailyPage from './components/DailyPage'
-import FollowingPage from './components/FollowingPage'
+// import DailyPage from './components/DailyPage'
+import { FollowingPage } from './components/FeedFollowing'
 import MotivationPage from './components/MotivatonPage'
 
 export default function App() {
@@ -30,7 +30,6 @@ export default function App() {
                 <Route path='/tracker/savings' element={<SavingsPage />} />
                 <Route path='/tracker/calendar' element={<CalendarPage />} />
                 <Route path='/daily/workbook' element={<WorkbookPage />} />
-                <Route path='/daily/pledge' element={<DailyPage />} />
                 <Route path='/daily/motivation' element={<MotivationPage />} />
             </Routes>
         </Router>  

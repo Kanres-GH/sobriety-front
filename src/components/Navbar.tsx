@@ -8,9 +8,9 @@ import exitIcon from "../static/imgs/icons/exit.svg";
 import settingsIcon from "../static/imgs/icons/settings.svg";
 import trackerIcon from "../static/imgs/icons/chart-pie-alt.svg";
 import feedIcon from '../static/imgs/icons/table-layout.svg'
-import followingIcon from '../static/imgs/icons/following.svg'
+// import followingIcon from '../static/imgs/icons/following.svg'
 import workbookIcon from '../static/imgs/icons/book-open-reader.svg'
-import pledgeIcon from '../static/imgs/icons/drawer-alt.svg'
+// import pledgeIcon from '../static/imgs/icons/drawer-alt.svg'
 import motivationIcon from '../static/imgs/icons/talent-hand.svg'
 import "../static/css/navbar.css";
 import logo from "../static/imgs/logo.png";
@@ -57,20 +57,20 @@ export default function Navbar() {
                                     Feed
                                 </li>
                             </Link>
-                            <Link to="/community/following">
+                            {/* <Link to="/community/following">
                                 <li className={`navbar-li ${isActive(["/community/following"]) ? "active-link" : ""}`}>
                                     <img src={followingIcon} className="navbar-icon-current" />
                                     Following
                                 </li>
-                            </Link>
+                            </Link> */}
                         </> : isActive(["/daily"]) ?
                         <>
-                            <Link to="/daily/pledge">
+                            {/* <Link to="/daily/pledge">
                                 <li className={`navbar-li ${isActive(["/daily/pledge"]) ? "active-link" : ""}`}>
                                     <img src={pledgeIcon} className="navbar-icon-current" />
                                     Pledge
                                 </li>
-                            </Link>
+                            </Link> */}
                             <Link to="/daily/workbook">
                                 <li className={`navbar-li ${isActive(["/daily/workbook"]) ? "active-link" : ""}`}>
                                     <img src={workbookIcon} className="navbar-icon-current" />
@@ -102,7 +102,7 @@ export default function Navbar() {
                             Community
                         </li>
                     </Link>
-                    <Link to="/daily/pledge">
+                    <Link to="/daily/workbook">
                         <li className={`navbar-li ${isActive(["/daily"]) ? "active-link" : ""} navbar-li-list`}>
                             <img src={dailyFeedIcon} className="navbar-icon-list" />
                             Daily

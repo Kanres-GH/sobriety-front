@@ -79,7 +79,7 @@ export default function DaysTracker() {
             <div className="start-tracker">
                 <p style={{position: 'absolute', top: '10px', fontWeight: '300'}}>My sober start date</p>
                 <div className="start-tracker-box">
-                    <h1 style={{fontSize: '60px'}}>27 November 2024</h1>
+                    <h1 style={{fontSize: '48px'}}>27 November 2024</h1>
                     <p style={{color: '#acacac', fontWeight: '300'}}>18:26</p>
                 </div>
             </div>
@@ -95,7 +95,7 @@ export default function DaysTracker() {
     };
 
     return (
-        <div className='days-tracker'>
+        <div className='days-tracker tracker-div'>
             <div className="days-tracker-div">
                 {divs[currentIndex].content}
             </div>

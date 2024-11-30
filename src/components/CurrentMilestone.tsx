@@ -1,3 +1,4 @@
+
 import '../static/css/main-page.css'
 import flagIcon from '../static/imgs/icons/flag.svg'
 
@@ -11,7 +12,7 @@ export default function CurrentMilestone() {
             </div>
             <p style={{fontWeight: '300'}}>Next milestone in <span style={{color: '#FF9D00'}}>5 days</span></p>
             <p style={{color: '#a1adff', cursor: 'pointer'}}><u>View all milestones</u> &gt;</p>
-            <button style={{color: 'white', backgroundColor: '#2FA950', borderRadius: '20px', fontWeight: '500', fontSize: '14px'}}>See my progress</button>
+            {/* <button style={{color: 'white', backgroundColor: '#2FA950', borderRadius: '20px', fontWeight: '500', fontSize: '14px'}}>See my progress</button> */}
         </div>
     );
 }
