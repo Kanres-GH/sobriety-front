@@ -21,7 +21,7 @@ export default function MainPage() {
                                 <p>Enjoy your stay and don’t forget to look after yourself!</p>
                             </div>
                             <div className="main-dashboard-banner-span" style={{display: 'flex', fontWeight: '500', cursor: 'pointer', fontSize: '12px'}}>
-                                <button style={{backgroundColor: '#2FA950', color: 'white', borderRadius: '20px'}}>Make a Pledge &gt;</button>
+                                <button style={{backgroundColor: '#2FA950', color: 'white', borderRadius: '20px'}}>Review today's day &gt;</button>
                                 {/* <img src={angleIcon} style={{height: '100%', filter: 'invert(90%) sepia(23%) saturate(589%) hue-rotate(70deg) brightness(102%) contrast(101%)'}} /> */}
                             </div>
                         </div>

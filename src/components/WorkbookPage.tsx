@@ -11,7 +11,7 @@ export default function WorkbookPage() {
             <div className="main-workbook">
                 <NavMain />
                 <div className="workbook-content">
-
+                    
                 </div>
             </div>
             <SideProfile />

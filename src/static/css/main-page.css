@@ -1044,8 +1044,96 @@ body {
 
 /* -- DAILY -- */
 
-.workbook-content {
+/* .workbook-content {
     display: flex;
     flex-direction: column;
     border: 1px solid red;
+} */
+
+.motivation-content {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.motivation-content-box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+    /* border: 1px solid yellow; */
+}
+
+.motivation-image-box {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    height: 300px;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.motivation-image-box:hover {
+    scale: 1.05;
+}
+
+.motivation-image-box span {
+    font-size: 14px;
+    color: rgb(172, 172, 172);
+    user-select: none;
+}
+
+.motivation-image-box h1 {
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.gradient-background-motivation {
+    background: linear-gradient(168deg,#571e14,#523719,#581a4b,#222158);
+    background-size: 240% 240%;
+    animation: gradient-animation 12s ease infinite;
+}
+
+.motivation-previous-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.motivation-previous-list h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.motivation-list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* padding: 10px; */
+    border: 1px solid grey;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.motivation-list-item:hover {
+    scale: 1.05;
+}
+
+.motivation-item-header {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-size: 14px;
+    background-color: #0e0e0e;
+    padding: 15px;
+}
+
+.motivation-item-content {
+    padding: 15px;
+    font-weight: 300;
 }

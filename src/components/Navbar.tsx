@@ -9,7 +9,7 @@ import settingsIcon from "../static/imgs/icons/settings.svg";
 import trackerIcon from "../static/imgs/icons/chart-pie-alt.svg";
 import feedIcon from '../static/imgs/icons/table-layout.svg'
 // import followingIcon from '../static/imgs/icons/following.svg'
-import workbookIcon from '../static/imgs/icons/book-open-reader.svg'
+// import workbookIcon from '../static/imgs/icons/book-open-reader.svg'
 // import pledgeIcon from '../static/imgs/icons/drawer-alt.svg'
 import motivationIcon from '../static/imgs/icons/talent-hand.svg'
 import "../static/css/navbar.css";
@@ -71,12 +71,12 @@ export default function Navbar() {
                                     Pledge
                                 </li>
                             </Link> */}
-                            <Link to="/daily/workbook">
+                            {/* <Link to="/daily/workbook">
                                 <li className={`navbar-li ${isActive(["/daily/workbook"]) ? "active-link" : ""}`}>
                                     <img src={workbookIcon} className="navbar-icon-current" />
                                     Workbook
                                 </li>
-                            </Link>
+                            </Link> */}
                             <Link to="/daily/motivation">
                                 <li className={`navbar-li ${isActive(["/daily/motivation"]) ? "active-link" : ""}`}>
                                     <img src={motivationIcon} className="navbar-icon-current" />
@@ -102,7 +102,7 @@ export default function Navbar() {
                             Community
                         </li>
                     </Link>
-                    <Link to="/daily/workbook">
+                    <Link to="/daily/motivation">
                         <li className={`navbar-li ${isActive(["/daily"]) ? "active-link" : ""} navbar-li-list`}>
                             <img src={dailyFeedIcon} className="navbar-icon-list" />
                             Daily

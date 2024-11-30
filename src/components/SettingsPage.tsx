@@ -1,6 +1,7 @@
 import '../static/css/main-page.css'
 import Navbar from './Navbar';
 import NavMain from './NavMain';
+import SideProfile from './SideProfile';
 
 export default function SettingsPage() {
 
@@ -9,7 +10,11 @@ export default function SettingsPage() {
             <Navbar />
             <div className="main-settings">
                 <NavMain />
+                <div className="settings-content">
+                    
+                </div>
             </div>
+            <SideProfile />
         </div>
     );
 }

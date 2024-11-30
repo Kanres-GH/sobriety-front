@@ -11,7 +11,7 @@ import CommunityPage from './components/CommunityPage'
 import ProfilePage from './components/ProfilePage'
 import WorkbookPage from './components/WorkbookPage'
 // import DailyPage from './components/DailyPage'
-import { FollowingPage } from './components/FeedFollowing'
+import { FeedFollowing } from './components/FeedFollowing'
 import MotivationPage from './components/MotivatonPage'
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
                 <Route path='/settings' element={<SettingsPage />} />
                 <Route path='/profile' element={<ProfilePage />} />
                 <Route path='/community/feed' element={<CommunityPage />} />
-                <Route path='/community/following' element={<FollowingPage />} />
+                <Route path='/community/following' element={<FeedFollowing />} />
                 <Route path='/tracker/savings' element={<SavingsPage />} />
                 <Route path='/tracker/calendar' element={<CalendarPage />} />
                 <Route path='/daily/workbook' element={<WorkbookPage />} />
