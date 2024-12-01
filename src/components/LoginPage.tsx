@@ -46,7 +46,7 @@ export default function LoginPage() {
                     <div className="reg-log-main-content-form">
                         <form>
                             <div className="reg-log-main-content-form-input">
-                                <label htmlFor="username">Username</label>
+                                <label htmlFor="username">Username or Email</label>
                                 <input type="text" id='username' value={username} onChange={(e) => setUsername(e.target.value)} />
                             </div>
                             <div className="reg-log-main-content-form-input">

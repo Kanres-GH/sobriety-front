@@ -29,6 +29,7 @@ export default function Navbar() {
         setLoginname(null);
         localStorage.removeItem("username");
         localStorage.removeItem("token");
+        // localStorage.removeItem("addiction");
         navigate("/login");
     }
 

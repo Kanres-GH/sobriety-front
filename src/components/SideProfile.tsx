@@ -5,13 +5,20 @@ import SideCalendar from './SideCalendar';
 import userIcon from '../static/imgs/icons/circle-user.svg'
 // import bellIcon from '../static/imgs/icons/bell.svg'
 import { useAuth } from './AuthProvider';
+import { useEffect, useState } from 'react';
 
 export default function SideProfile() {
+    const [selectedAddiction, setSelectedAddiction] = useState<string | null>(null);
 
     const { username } = useAuth()
 
     const soberDays = ["2024-11-20", "2024-11-21", "2024-11-22", "2024-11-19", "2024-11-23", "2024-11-24", "2024-11-25", "2024-11-26", "2024-11-28", "2024-11-29"];
     const resetDays = ["2024-11-27"];
+    
+    useEffect(() => {
+        const addiction = localStorage.getItem("addiction");
+        setSelectedAddiction(addiction);
+    }, []);
 
     return (
         <div className="side-profile">
@@ -30,7 +37,7 @@ export default function SideProfile() {
                 <div className="side-profile-info-2">
                     <div className="side-profile-info-2-item">
                         <p style={{color: '#ababab', fontSize: '12px'}}>Addiction</p>
-                        <p style={{color: 'white', fontWeight: 'bold', letterSpacing: 1}}>Alcohol</p>
+                        <p style={{color: 'white', fontWeight: '500', letterSpacing: 1}}>{selectedAddiction ? selectedAddiction : "Not set"}</p>
                     </div>
                     
                 </div>

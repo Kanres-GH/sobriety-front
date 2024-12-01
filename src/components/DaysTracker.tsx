@@ -1,11 +1,14 @@
 import '../static/css/main-page.css'
 import rightCircle from '../static/imgs/icons/angle-circle-right.svg'
 import leftCircle from '../static/imgs/icons/angle-circle-left.svg'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import resetIcon from '../static/imgs/icons/duration.svg'
 
+
 export default function DaysTracker() {
+    
     const [currentIndex, setCurrentIndex] = useState(0);
+    // const { startDate } = sobrietyData;
     const divs = [
         {
             id: 1,
@@ -80,7 +83,7 @@ export default function DaysTracker() {
             <div className="start-tracker">
                 <p style={{position: 'absolute', top: '10px', fontWeight: '300'}}>My sober start date</p>
                 <div className="start-tracker-box">
-                    <h1 style={{fontSize: '48px'}}>27 November 2024</h1>
+                    <h1 style={{fontSize: '48px'}}>{}</h1>
                     <p style={{color: '#acacac', fontWeight: '300'}}>18:26</p>
                 </div>
             </div>

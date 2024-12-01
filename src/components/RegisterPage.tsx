@@ -117,14 +117,13 @@ export default function RegisterPage() {
         e.preventDefault();
 
         if (isLastStep) {
-            const {username, password} = data;
-            // console.log(username, password);
-
-            signUp(username, password)
+            const {username, email, password} = data;
+            signUp(username, email, password)
             .then((response) => {
                 setToken(response.accessToken);
                 setLoginname(username);
                 localStorage.setItem("username", username);
+                localStorage.setItem("addiction", addiction);
                 alert("Account successfully created!");
                 navigate("/tracker/dashboard");
             }) .catch((error) => {
