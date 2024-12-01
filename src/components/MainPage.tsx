@@ -5,6 +5,9 @@ import Dashboard from './Dashboard';
 import SideProfile from './SideProfile';
 // import angleIcon from '../static/imgs/icons/angle-small-right.svg'
 import bannerAvatar from '../static/imgs/icons/banner-avatar.svg'
+import { useEffect, useState, useContext, createContext, ReactNode } from 'react';
+
+
 export default function MainPage() {
 
     return (
@@ -16,9 +19,9 @@ export default function MainPage() {
                     <div className="main-dashboard-banner">
                         <div className="main-dashboard-banner-text">
                             <div className="main-dashboard-banner-header">
-                                <h1 style={{color: 'white', fontSize: '24px'}}>Hello <span style={{fontWeight: 'bold'}}>Tom Allen</span>,</h1>
+                                <h1 style={{color: 'white', fontSize: '24px'}}>Hello <span style={{fontWeight: 'bold'}}>{"User"}</span>,</h1>
                                 <p>Welcome back to the NEW ME!</p>
-                                <p>Enjoy your stay and don’t forget to look after yourself!</p>
+                                <p>Enjoy your stay and don't forget to look after yourself!</p>
                             </div>
                             <div className="main-dashboard-banner-span" style={{display: 'flex', fontWeight: '500', cursor: 'pointer', fontSize: '12px'}}>
                                 <button style={{backgroundColor: '#2FA950', color: 'white', borderRadius: '20px'}}>Review today's day &gt;</button>

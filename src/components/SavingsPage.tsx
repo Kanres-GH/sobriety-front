@@ -3,9 +3,52 @@ import '../static/css/main-page.css';
 import Navbar from './Navbar';
 import NavMain from './NavMain';
 import SideProfile from './SideProfile';
+import editIcon from '../static/imgs/icons/edit.svg'
+
 
 export default function SavingsPage() {
     const [selectedTab, setSelectedTab] = useState('Money');
+    const [moneyData, setMoneyData] = useState({
+        moneyPerDay: "$7.00",
+        overallSaved: "$399.00",
+    });
+    const [timeData, setTimeData] = useState({
+        timePerDay: { hours: 1, minutes: 36 }, // Example: 1h : 36m
+        overallTimeSaved: { hours: 93, minutes: 0 }, // Example: 93h : 0m
+    });
+
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [editTarget, setEditTarget] = useState<{
+        label: string;
+        value: any;
+        type: 'money' | 'time';
+    } | null>(null);
+
+    const openDialog = (label: string, value: any, type: 'money' | 'time') => {
+        setEditTarget({ label, value, type });
+        setIsDialogOpen(true);
+    };
+
+    const closeDialog = () => {
+        setEditTarget(null);
+        setIsDialogOpen(false);
+    };
+
+    const handleSubmit = (newValue: any) => {
+        if (editTarget?.type === 'money') {
+            setMoneyData((prev) => ({
+                ...prev,
+                [editTarget.label]: newValue,
+            }));
+        } else if (editTarget?.type === 'time') {
+            setTimeData((prev) => ({
+                ...prev,
+                [editTarget.label]: newValue,
+            }));
+        }
+        closeDialog();
+    };
+
 
     return (
         <div className="main">
@@ -39,7 +82,12 @@ export default function SavingsPage() {
                         <div className="savings-summary-list">
                             <div className="savings-summary-item">
                                 <p>Money spent per day</p>
-                                <span style={{ color: '#53fc53' }}>$7.00</span>
+                                <div className="savings-summary-item-edit">
+                                    <span style={{ color: '#53fc53' }}>$7.00</span><img src={editIcon}
+                                    onClick={() =>
+                                        openDialog('moneyPerDay', moneyData.moneyPerDay, 'money')
+                                    } />
+                                </div>
                             </div>
                             <div className="savings-summary-item">
                                 <p>Oldest start date</p>
@@ -101,7 +149,12 @@ export default function SavingsPage() {
                         <div className="savings-summary-list">
                             <div className="savings-summary-item">
                                 <p>Time saved per day</p>
-                            <span style={{ color: '#53fc53', fontWeight: '500' }}>1.6 hours</span>
+                                <div className="savings-summary-item-edit">
+                                    <span style={{ color: '#53fc53' }}>1.6 hours</span><img src={editIcon}
+                                    onClick={() =>
+                                        openDialog('timePerDay', timeData.timePerDay, 'time')
+                                    } />
+                                </div>
                             </div>
                             <div className="savings-summary-item">
                                 <p>Oldest start date</p>
@@ -154,7 +207,88 @@ export default function SavingsPage() {
                 )}
                 </div>
             </div>
+            {isDialogOpen && editTarget && (
+                <Dialog
+                    label={editTarget.label}
+                    value={editTarget.value}
+                    onClose={closeDialog}
+                    onSubmit={handleSubmit}
+                />
+            )}
             <SideProfile />
+        </div>
+    );
+}
+
+type DialogProps = {
+    label: string;
+    value: any;
+    onClose: () => void;
+    onSubmit: (newValue: any) => void;
+};
+
+function Dialog({ label, value, onClose, onSubmit }: DialogProps) {
+    const [inputHours, setInputHours] = useState(value.hours || 0);
+    const [inputMinutes, setInputMinutes] = useState(value.minutes || 0);
+
+    const handleFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const parsedValue = { hours: parseInt(inputHours), minutes: parseInt(inputMinutes) };
+        onSubmit(parsedValue);
+    };
+
+    return (
+        <div className="dialog-overlay">
+            <div className="dialog-box">
+                
+                {typeof value === 'object' ? (
+                    <form onSubmit={handleFormSubmit}>
+                        <h2>Edit spent time per day</h2>
+                        <div>
+                            <label>Hours:</label>
+                            <input
+                                type="number"
+                                value={inputHours}
+                                onChange={(e) => setInputHours(e.target.value)}
+                                min={0}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label>Minutes:</label>
+                            <input
+                                type="number"
+                                value={inputMinutes}
+                                onChange={(e) => setInputMinutes(e.target.value)}
+                                min={0}
+                                max={59}
+                                required
+                            />
+                        </div>
+                        <div className="dialog-buttons">
+                            <button type="button" onClick={onClose}>
+                                Cancel
+                            </button>
+                            <button type="submit">Save</button>
+                        </div>
+                    </form>
+                ) : (
+                    <form onSubmit={(e) => e.preventDefault()}>
+                        <h2>Edit spent money per day</h2>
+                        <input
+                            type="text"
+                            value={value}
+                            readOnly
+                        />
+                        <div className="dialog-buttons">
+                            <button type="button" onClick={onClose}>
+                                Close
+                            </button>
+                            <button type="submit">Save</button>
+                        </div>
+                    </form>
+                )}
+            </div>
         </div>
     );
 }

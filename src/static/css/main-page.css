@@ -681,6 +681,18 @@ body {
     align-items: center;
 }
 
+.savings-summary-item-edit {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.savings-summary-item-edit img {
+    cursor: pointer;
+    width: 20px;
+    filter: invert(71%) sepia(91%) saturate(386%) hue-rotate(61deg) brightness(102%) contrast(98%);
+}
+
 /* -- CALENDAR -- */
 
 .calendar-content {
@@ -1291,4 +1303,62 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+/* -- DIALOGUE BOX -- */
+
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialog-box {
+    background: rgb(53, 53, 53);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+.dialog-box h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.dialog-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dialog-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialog-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dialog-buttons button:first-child {
+    background: #ccc;
+}
+
+.dialog-buttons button:last-child {
+    background: #36883a;
+    color: white;
 }

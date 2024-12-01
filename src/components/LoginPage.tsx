@@ -2,13 +2,24 @@ import { Link } from 'react-router-dom';
 import logo from '../static/imgs/logo.svg'
 import '../static/css/reg-log.css'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { signIn } from '../api_service';
 
 export default function LoginPage() {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     const navigate = useNavigate()
 
     function onSubmit() {
-        navigate("/tracker/dashboard");
+        signIn(username, password)
+        .then(() => {
+            navigate("/tracker/dashboard");
+        }) .catch((error) => {
+            console.error("Sign-in failed", error);
+            alert(error.response?.data?.message || "An error occured while signing in.");
+        });
     }
     return (
         <div className='reg-log'>
@@ -23,12 +34,12 @@ export default function LoginPage() {
                     <div className="reg-log-main-content-form">
                         <form>
                             <div className="reg-log-main-content-form-input">
-                                <label htmlFor="text">Username or Email:</label>
-                                <input type="text" />
+                                <label htmlFor="username">Username</label>
+                                <input type="text" id='username' value={username} onChange={(e) => setUsername(e.target.value)} />
                             </div>
                             <div className="reg-log-main-content-form-input">
                                 <label htmlFor="password">Password:</label>
-                                <input type="password" />
+                                <input type="password" id='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                             </div>
                         </form>
                     </div>

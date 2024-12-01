@@ -6,6 +6,7 @@ import RegisterFinalForm from './RegisterFinalForm';
 import AddictionListForm from './AddictionListForm';
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { signUp } from '../api_service';
 
 type FormData = {
     username: string,
@@ -107,7 +108,17 @@ export default function RegisterPage() {
         e.preventDefault();
 
         if (isLastStep) {
-            navigate("/tracker/dashboard");
+            const {username, password} = data;
+            console.log(username, password);
+
+            signUp(username, password)
+            .then(() => {
+                alert("Account successfully created!");
+                navigate("/tracker/dashboard");
+            }) .catch((error) => {
+                console.error("Sign-up failed:", error);
+                alert(error.response?.data?.message || "An error occured while signing up");
+            });
         } else if (validateStep()) {
             next();
         }
