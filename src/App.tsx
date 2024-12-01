@@ -14,6 +14,7 @@ import WorkbookPage from './components/WorkbookPage'
 import { FeedFollowing } from './components/FeedFollowing'
 import MotivationPage from './components/MotivatonPage'
 import { AuthProvider } from './components/AuthProvider'
+import ProtectedRoute from './components/ProtectedRoute'
 
 export default function App() {
 
@@ -21,18 +22,21 @@ export default function App() {
         <Router>
             <AuthProvider>
                 <Routes>
-                    <Route path='*' element={<PageNotFound />} />
+                    {/* Глобальные страницы */}
                     <Route path='/login' element={<LoginPage />} />
                     <Route path='/register' element={<RegisterPage />} />
-                    <Route path='/tracker/dashboard' element={<MainPage />} />
-                    <Route path='/settings' element={<SettingsPage />} />
-                    <Route path='/community/feed' element={<CommunityPage />} />
+                    {/* Для них нужен логин */}
+                    <Route path='*' element={<ProtectedRoute><PageNotFound /></ProtectedRoute>} />
+                    <Route path='/tracker/dashboard' element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
+                    <Route path='/settings' element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
+                    <Route path='/community/feed' element={<ProtectedRoute><CommunityPage /></ProtectedRoute>} />
                     <Route path='/community/following' element={<FeedFollowing />} />
-                    <Route path='/tracker/savings' element={<SavingsPage />} />
-                    <Route path='/tracker/calendar' element={<CalendarPage />} />
-                    <Route path='/daily/workbook' element={<WorkbookPage />} />
-                    <Route path='/daily/motivation' element={<MotivationPage />} />
-                    <Route path='/community/profile' element={<ProfilePage />} />
+                    <Route path='/tracker/savings' element={<ProtectedRoute><SavingsPage /></ProtectedRoute>} />
+                    <Route path='/tracker/calendar' element={<ProtectedRoute><CalendarPage /></ProtectedRoute>} />
+                    <Route path='/daily/workbook' element={<ProtectedRoute><WorkbookPage /></ProtectedRoute>} />
+                    <Route path='/daily/motivation' element={<ProtectedRoute><MotivationPage /></ProtectedRoute>} />
+                    <Route path='/community/profile' element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+                    
                 </Routes>
             </AuthProvider>
         </Router>

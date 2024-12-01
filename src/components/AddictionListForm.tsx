@@ -8,7 +8,6 @@ type AddictionListFormProps = {
 
 export default function AddictionListForm({ addiction, setAddiction, error }: AddictionListFormProps) {
 
-    // const [addiction, setAddiction] = useState("Select from the list below.")
     function handleClick(e: React.MouseEvent<HTMLLIElement>) {
         setAddiction(e.currentTarget.innerHTML);
     }

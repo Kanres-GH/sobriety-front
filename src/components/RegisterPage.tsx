@@ -5,8 +5,10 @@ import UserDataForm from './UserDataForm';
 import RegisterFinalForm from './RegisterFinalForm';
 import AddictionListForm from './AddictionListForm';
 import { FormEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { signUp } from '../api_service';
+import { useAuth } from './AuthProvider';
+import UserDataFormAdd from './UserDataFormAdd';
 
 type FormData = {
     username: string,
@@ -25,6 +27,12 @@ const INITIAL_DATA: FormData = {
 }
 
 export default function RegisterPage() {
+    const { isLoggedIn } = useAuth();
+
+    if (isLoggedIn) {
+        return <Navigate to="/tracker/dashboard" replace />;
+    }
+    const { setToken, setLoginname } = useAuth();
     const [data, setData] = useState(INITIAL_DATA);
     const [addiction, setAddiction] = useState("Select from the list below.");
     const [errors, setErrors] = useState({
@@ -39,6 +47,7 @@ export default function RegisterPage() {
     const { currentStepIndex, step, next, back, isFirstStep, isLastStep } = useMultiForm([
         <UserDataForm {...data} updateFields={updateFields} errors={errors} />,
         <AddictionListForm addiction={addiction} setAddiction={setAddiction} error={errors.addiction}/>,
+        <UserDataFormAdd />,
         <RegisterFinalForm />,
     ]);
 
@@ -109,10 +118,13 @@ export default function RegisterPage() {
 
         if (isLastStep) {
             const {username, password} = data;
-            console.log(username, password);
+            // console.log(username, password);
 
             signUp(username, password)
-            .then(() => {
+            .then((response) => {
+                setToken(response.accessToken);
+                setLoginname(username);
+                localStorage.setItem("username", username);
                 alert("Account successfully created!");
                 navigate("/tracker/dashboard");
             }) .catch((error) => {

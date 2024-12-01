@@ -1,26 +1,38 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import logo from '../static/imgs/logo.svg'
 import '../static/css/reg-log.css'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { signIn } from '../api_service';
+import { useAuth } from './AuthProvider';
 
 export default function LoginPage() {
+    const { isLoggedIn } = useAuth();
+    const { setToken, setLoginname } = useAuth();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const navigate = useNavigate()
 
+    if (isLoggedIn) {
+        return <Navigate to="/tracker/dashboard" replace />;
+    }
+
     function onSubmit() {
         signIn(username, password)
-        .then(() => {
+        .then((data) => {
+            setToken(data.accessToken);
+            setLoginname(username);
+            localStorage.setItem("token", data.accessToken);
+            localStorage.setItem("username", username);
             navigate("/tracker/dashboard");
         }) .catch((error) => {
             console.error("Sign-in failed", error);
             alert(error.response?.data?.message || "An error occured while signing in.");
         });
     }
+    
     return (
         <div className='reg-log'>
             <div className="reg-log-img" />

@@ -3,8 +3,10 @@ import Navbar from './Navbar';
 import NavMain from './NavMain';
 import SideProfile from './SideProfile';
 import userIcon from '../static/imgs/icons/circle-user.svg'
+import { useAuth } from './AuthProvider';
 
 export default function SettingsPage() {
+    const { username, } = useAuth()
 
     return (
         <div className='main'>
@@ -24,7 +26,7 @@ export default function SettingsPage() {
                             <div className="settings-data-item">
                                 <div className="settings-data-item-info">
                                     <span>Username</span>
-                                    <p>Kanres</p>
+                                    <p>{username}</p>
                                 </div>
                                 <span>&gt;</span>
                             </div>
@@ -38,7 +40,7 @@ export default function SettingsPage() {
                             <div className="settings-data-item">
                                 <div className="settings-data-item-info">
                                     <span>Email</span>
-                                    <p>inbox@mail.com</p>
+                                    <p>Not set</p>
                                 </div>
                                 <span>&gt;</span>
                             </div>

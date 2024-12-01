@@ -14,11 +14,23 @@ import feedIcon from '../static/imgs/icons/table-layout.svg'
 import motivationIcon from '../static/imgs/icons/talent-hand.svg'
 import "../static/css/navbar.css";
 import logo from "../static/imgs/logo.png";
+import { useAuth } from "./AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+    const { setToken, setLoginname } = useAuth();
+    const navigate = useNavigate();
     const location = useLocation();
 
     const isActive = (paths : any) => paths.some((path : any) => location.pathname.startsWith(path));
+
+    function handleLogout() {
+        setToken(null);
+        setLoginname(null);
+        localStorage.removeItem("username");
+        localStorage.removeItem("token");
+        navigate("/login");
+    }
 
     return (
         <div className="navbar-main">
@@ -119,7 +131,7 @@ export default function Navbar() {
                             Settings
                         </li>
                     </Link>
-                    <li className="navbar-li navbar-li-bottom">
+                    <li className="navbar-li navbar-li-bottom" onClick={handleLogout}>
                         <img src={exitIcon} className="navbar-icon-bottom" />
                         Log Out
                     </li>
