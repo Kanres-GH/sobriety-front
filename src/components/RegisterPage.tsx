@@ -118,7 +118,7 @@ export default function RegisterPage() {
 
         if (isLastStep) {
             const {username, email, password} = data;
-            signUp(username, email, password)
+            signUp(username, email, password, addiction)
             .then((response) => {
                 setToken(response.accessToken);
                 setLoginname(username);

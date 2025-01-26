@@ -11,11 +11,12 @@ const apiClient = axios.create({
   },
 });
 
-export const signUp = async (login: string, email: string, password: string) => {
+export const signUp = async (login: string, email: string, password: string, addiction: string) => {
   const response = await apiClient.post("/sign-up", {
     login: login,
     email: email,
-    password: password
+    password: password,
+    addiction: addiction
   });
   if (response.data && response.data.accessToken) {
     token = response.data.accessToken;

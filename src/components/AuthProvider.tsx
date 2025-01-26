@@ -1,22 +1,58 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import axios from "axios";
 
 type AuthContextType = {
     token: string | null;
     username: string | null;
+    loading: boolean;
     setToken: (token: string | null) => void;
     setLoginname: (username: string | null) => void;
     isLoggedIn: boolean;
+    fetchUsername: () => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [token, setToken] = useState<string | null>(null);
-    const [username, setLoginname] = useState<string | null>(localStorage.getItem("username"));
+    // const [username, setLoginname] = useState<string | null>(localStorage.getItem("username"));
+    const [username, setLoginname] = useState<string | null>(null);
     const isLoggedIn = Boolean(token);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    const fetchUsername = async () => {
+        if (!token) return;
+        try {
+            setLoading(true);
+            const response = await axios.get("https://diploma-backend-3e4r.onrender.com/users", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            const users = response.data;
+            const storedLogin = localStorage.getItem("username"); // Could be email or username
+            const currentUser = users.find(
+                (user: any) =>
+                    user.user.Email === storedLogin || user.user.Name === storedLogin
+            );
+            console.log(currentUser.user.Name);
+
+            if (currentUser) {
+                setLoginname(currentUser.user.Name);
+            }
+        } catch (error) {
+            console.error("Failed to fetch username:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchUsername();
+    }, [token]);
 
     return (
-        <AuthContext.Provider value={{ token, setToken, username, setLoginname, isLoggedIn }}>
+        <AuthContext.Provider value={{ token, setToken, username, setLoginname, isLoggedIn, fetchUsername, loading }}>
             {children}
         </AuthContext.Provider>
     );

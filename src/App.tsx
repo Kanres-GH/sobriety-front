@@ -36,7 +36,6 @@ export default function App() {
                     <Route path='/daily/workbook' element={<ProtectedRoute><WorkbookPage /></ProtectedRoute>} />
                     <Route path='/daily/motivation' element={<ProtectedRoute><MotivationPage /></ProtectedRoute>} />
                     <Route path='/community/profile' element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
-                    
                 </Routes>
             </AuthProvider>
         </Router>
