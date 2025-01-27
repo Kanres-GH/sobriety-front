@@ -10,18 +10,26 @@ import { Addiction } from './AddictionListForm';
 
 export default function SideProfile() {
     const [addictions, setAddictions] = useState<Addiction[]>([]);
+    const [selectedAddiction, setSelectedAddiction] = useState<string | null>(null);
     useEffect(() => {
         fetch('https://diploma-backend-3e4r.onrender.com/auth/deps')
-            .then((response) => response.json())
-            .then((data) => {
-                // console.log(data);
-                setAddictions(data);
-            })
-            .catch((error) => {
-                console.error("Error fetching addictions:", error);
-            });
+        .then((response) => response.json())
+        .then((data) => {
+            // console.log(data);
+            setAddictions(data);
+        })
+        .catch((error) => {
+            console.error("Error fetching addictions:", error);
+        });
+        // fetch('https://diploma-backend-3e4r.onrender.com/users')
+        // .then((response) => response.json())
+        // .then((data) => { 
+        //     setSelectedAddiction(data);
+        // });
+        // console.log("Current addiction: ", selectedAddiction)
         }, []);
-    const [selectedAddiction, setSelectedAddiction] = useState<string | null>(null);
+    
+    
 
     const { username } = useAuth()
 
@@ -50,7 +58,7 @@ export default function SideProfile() {
                 <div className="side-profile-info-2">
                     <div className="side-profile-info-2-item">
                         <p style={{color: '#ababab', fontSize: '12px'}}>Addiction</p>
-                        <p style={{color: 'white', fontWeight: '500', letterSpacing: 1}}>{selectedAddiction ? addictions.find((i) => i.id === selectedAddiction)?.name : "Not set"}</p>
+                        <p style={{color: 'white', fontWeight: '500', letterSpacing: 1}}>{selectedAddiction ? selectedAddiction : "Not set"}</p>
                     </div>
                     
                 </div>

@@ -125,7 +125,7 @@ export default function RegisterPage() {
                 getPersonDependencies(response.accessToken, addiction);
                 console.log("Addiction: ", addiction);
                 localStorage.setItem("username", username);
-                localStorage.setItem("addiction", addiction);
+                // localStorage.setItem("addiction", addiction);
                 alert("Account successfully created!");
                 navigate("/tracker/dashboard");
             }) .catch((error) => {
