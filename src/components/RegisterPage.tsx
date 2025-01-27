@@ -6,7 +6,7 @@ import RegisterFinalForm from './RegisterFinalForm';
 import AddictionListForm from './AddictionListForm';
 import { FormEvent, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { signUp } from '../api_service';
+import { getPersonDependencies, signUp } from '../api_service';
 import { useAuth } from './AuthProvider';
 import UserDataFormAdd from './UserDataFormAdd';
 
@@ -118,10 +118,12 @@ export default function RegisterPage() {
 
         if (isLastStep) {
             const {username, email, password} = data;
-            signUp(username, email, password, addiction)
+            signUp(username, email, password)
             .then((response) => {
                 setToken(response.accessToken);
                 setLoginname(username);
+                getPersonDependencies(response.accessToken, addiction);
+                console.log("Addiction: ", addiction);
                 localStorage.setItem("username", username);
                 localStorage.setItem("addiction", addiction);
                 alert("Account successfully created!");

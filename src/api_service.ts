@@ -11,12 +11,11 @@ const apiClient = axios.create({
   },
 });
 
-export const signUp = async (login: string, email: string, password: string, addiction: string) => {
+export const signUp = async (login: string, email: string, password: string) => {
   const response = await apiClient.post("/sign-up", {
     login: login,
     email: email,
-    password: password,
-    addiction: addiction
+    password: password
   });
   if (response.data && response.data.accessToken) {
     token = response.data.accessToken;
@@ -37,14 +36,26 @@ export const getDependencies = async () => {
   return response.data;
 };
 
-export const getPersonDependencies = async (
-  token: string,
-  dependencies: [string]
-) => {
-  const response = await apiClient.post("/deps", dependencies, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  return response.data;
+export const getPersonDependencies = async (token: string, dependencyId: string) => {
+    try {
+        const data = [
+          {
+            id: dependencyId,
+          },
+        ];
+    
+        const response = await apiClient.post("/deps", data, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+    
+        console.log("Response Data:", response.data);
+        return response.data;
+      } catch (error) {
+        console.error("Error saving dependency:", error);
+        throw error;
+      }
 };
 
 export const sendMotivationLetter = async (

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+// import { getPersonDependencies } from "../api_service";
 
-type Addiction = {
+export type Addiction = {
     id: string;
     name: string;
 };
@@ -12,6 +13,7 @@ type AddictionListFormProps = {
 };
 
 export default function AddictionListForm({ addiction, setAddiction, error }: AddictionListFormProps) {
+    const [selectedAddiction, setSelectedAddiction] = useState("")
     const [addictions, setAddictions] = useState<Addiction[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -19,6 +21,7 @@ export default function AddictionListForm({ addiction, setAddiction, error }: Ad
         fetch('https://diploma-backend-3e4r.onrender.com/auth/deps')
             .then((response) => response.json())
             .then((data) => {
+                // console.log(data);
                 setAddictions(data);
                 setLoading(false);
             })
@@ -29,7 +32,10 @@ export default function AddictionListForm({ addiction, setAddiction, error }: Ad
     }, []);
 
     function handleClick(e: React.MouseEvent<HTMLLIElement>) {
-        setAddiction(e.currentTarget.innerHTML);
+        const addictionArray = addictions.find((i) => i.name === e.currentTarget.innerHTML)
+        console.log(addictionArray?.id);
+        setSelectedAddiction(e.currentTarget.innerHTML);
+        setAddiction(addictionArray?.id );
     }
 
     return (
@@ -40,7 +46,7 @@ export default function AddictionListForm({ addiction, setAddiction, error }: Ad
                 </h1>
             </div>
             <span style={{color: '#6de38c', alignSelf: 'center', fontSize: '1.5em', letterSpacing: 1.5, cursor: 'auto'}}>
-                {addiction}
+                {selectedAddiction}
             </span>
             <p style={{color: 'gray', alignSelf: 'center'}}>You can add more later.</p>
 
